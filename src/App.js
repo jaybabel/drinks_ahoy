@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./components/Header";
-import logo from './logo.svg';
 import './App.css';
+import Alphabetical from './components/Alphabetical';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <div className="App">
       <Header />  
       Drinks Ahoy!!
-      
+      <Alphabetical />
       </div>
     );
   }

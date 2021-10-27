@@ -4,15 +4,28 @@ import './App.css';
 import Alphabetical from './components/Alphabetical';
 
 
-function App() {
-  return (
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      searchInput: ""
+    }
+  }
+
+  render() {
+
+
+    return (
       <div className="App">
       <Header />  
       Drinks Ahoy!!
       <Alphabetical />
+        <Header />
+
       </div>
     );
   }
-  
+}
 
 export default App;

@@ -1,18 +1,27 @@
 import React from 'react';
 import Header from "./components/Header";
-import logo from './logo.svg';
 import './App.css';
 
 
-function App() {
-  return (
+class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      searchInput: ""
+    }
+  }
+
+  render() {
+
+
+    return (
       <div className="App">
-      <Header />  
-      Drinks Ahoy!!
-      
+        <Header />
+
       </div>
     );
   }
-  
+}
 
 export default App;

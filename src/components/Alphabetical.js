@@ -12,7 +12,7 @@ class Alphabetical extends Component {
 
     componentDidMount = () => {
         axios
-            .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=b", {
+            .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a", {
 
             })
             .then((response) => {
@@ -22,17 +22,18 @@ class Alphabetical extends Component {
 
     render() {
         console.log("cocktails: ", this.state.cocktails)
-        return(
-        <div>
-            {this.state.cocktails.map((cocktail, index) => {
-                console.log("cocktails-return: ", this.state.cocktails)
-                return(
-                    <div key={cocktail.id}>
-                        <p>{cocktail.strDrink}</p>
-                    </div>                    
-                )
-            })}
-        </div>
+        return (
+            <div className="cocktailList">
+                {this.state.cocktails.map((cocktail, index) => {
+                    console.log("cocktails-return: ", this.state.cocktails)
+                    return (
+                        <div key={cocktail.id}
+                            style={{backgroundImage: `url(${cocktail.strDrinkThumb})` }}>
+                            <p>{cocktail.strDrink}</p>
+                        </div>
+                    )
+                })}
+            </div>
         )
     }
 }

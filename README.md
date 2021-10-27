@@ -20,3 +20,5 @@ I am a consumer, I want to search by drink name, So I can get the recipe for the
 I am a consumer, I want to search by ingredients, So I can see what drinks are made using that ingredient.
 
 I am a consumer, I want to look at drinks by alphabetical listing, So that I can find a drink that starts with a specific letter or letters.
+
+I am a consumer, I want to know what site I am on, So I can use it again.

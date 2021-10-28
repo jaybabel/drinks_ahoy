@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -35,6 +36,14 @@ class Alphabetical extends Component {
             </div>
         )
     }
+=======
+import react from 'react';
+
+function Alphabetical() {
+    return (
+       <h3>Alphabetical</h3>     
+    );
+>>>>>>> Bob_branch
 }
 
 export default Alphabetical;

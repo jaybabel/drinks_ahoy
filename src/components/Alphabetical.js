@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import LetterChooser from './LetterChooser'
 
 class Alphabetical extends Component {
     constructor() {
@@ -7,7 +8,8 @@ class Alphabetical extends Component {
 
         this.state = {
             cocktails: [],
-            searchLetter: 'd'
+            searchLetters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ],
+            searchLetter: 'M'
         }
     }
 
@@ -23,16 +25,21 @@ class Alphabetical extends Component {
 
     render() {
         return (
-            <div className="cocktailList">
-                {this.state.cocktails.map((cocktail, index) => {
-                    return (
-                        <div key={cocktail.id}
-                            style={{backgroundImage: `url(${cocktail.strDrinkThumb})` }}>
-                            <p>{cocktail.strDrink}</p>
-                        </div>
-                    )
-                })}
+            <div>
+                <LetterChooser />
+                <div className="cocktailList">
+
+                    {this.state.cocktails.map((cocktail, index) => {
+                        return (
+                            <div key={cocktail.id}
+                                style={{ backgroundImage: `url(${cocktail.strDrinkThumb})` }}>
+                                <p>{cocktail.strDrink}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
+
         )
     }
 }

@@ -48,6 +48,7 @@ class App extends Component {
       })
   }
 
+
   render() {
 
 
@@ -57,7 +58,7 @@ class App extends Component {
           <Link to="/"> <Header /> </Link>
         </nav>
         <main>
-
+         
           <Route exact path="/" 
               render = {routerProps => (
             <Random 

@@ -60,22 +60,19 @@ class App extends Component {
           <Link to="/"> <Header /> </Link>
         </nav>
         <main>
-         
-          <Route exact path="/" 
-              render = {routerProps => (
-            <Random 
-            {...routerProps}             
-            dataRandom={this.state.dataRandom}
-              drinkState={this.state.drinkState}
-              newRandomDrink={this.newRandomDrink} 
-            /> )} />
-            <Route path="/alphabetical"
-              render = {routerProps => (
-              <Alphabetical 
-              {...routerProps}   
-            />  )} />              
-
-
+          <Route exact path="/"
+            render={routerProps => (
+              <Random
+                {...routerProps}
+                dataRandom={this.state.dataRandom}
+                drinkState={this.state.drinkState}
+                newRandomDrink={this.newRandomDrink}
+              />)} />
+          <Route path="/alphabetical"
+            render={routerProps => (
+              <Alphabetical
+                {...routerProps}
+              />)} />
         </main>
       </div>
     );

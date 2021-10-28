@@ -15,8 +15,12 @@ const Random = (props) => {
 
         <div>
             <h1>Random Drink</h1>
-            <div>{props.dataRandom.drinks[0].strDrink}</div>
-            <button onClick={props.componentDidMount}>New Random</button>
+            <div>{props.drinkState.strDrink}</div>
+            <img src={props.drinkState.strDrinkThumb} alt=""/>
+            <div>Instructions: {props.drinkState.strInstructions}</div>
+            
+            <div></div>
+            <button onClick={props.newRandomDrink}>New Random Drink</button>
 
         </div>
     )

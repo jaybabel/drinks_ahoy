@@ -12,7 +12,8 @@ class App extends Component {
 
     this.state = {
       searchInput: "",
-      dataRandom: ""
+      dataRandom: "",
+      drinkState: "",
     }
   }
 
@@ -23,6 +24,7 @@ class App extends Component {
         console.log(response.data)
         this.setState({
           dataRandom:response.data,
+          drinkState:response.data.drinks[0]
         })
     })
     .catch(err => {
@@ -30,16 +32,30 @@ class App extends Component {
     })
   }
 
+  newRandomDrink = (e) => {
+    axios
+    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+    .then(response => {
+        console.log(response.data)
+        this.setState({
+          dataRandom:response.data,
+          drinkState:response.data.drinks[0]
+        })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   render() {
-    // console.log(this.state.dataRandom.drinks[0].strDrink)
-  //   if (!this.state.dataRandom.drinks[0].strDrink) {
-  //     return <span>Loading...</span>;
-  // }
+   
+    
     return (
       <div className="App">
       <Header />  
-      <Random dataRandom={this.state.dataRandom}/>
+      <Random dataRandom={this.state.dataRandom} 
+              drinkState={this.state.drinkState}
+              newRandomDrink={this.newRandomDrink}/>
       <Alphabetical />
 
       </div>

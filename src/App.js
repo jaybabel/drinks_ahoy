@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import Header from "./components/Header";
-import './App.css';
-import Alphabetical from './components/Alphabetical';
-=======
 import React, {Component}from 'react';
 import Header from "./components/Header";
 import './App.css';
 import axios from 'axios';
 import Alphabetical from './components/Alphabetical';
 import Random from './components/Random';
->>>>>>> Bob_branch
 
 
 class App extends Component {

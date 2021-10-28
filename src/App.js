@@ -1,4 +1,5 @@
-import React, {Component}from 'react';
+import React, { Component } from 'react';
+import { Route, Link, Switch, Redirect } from 'react-router-dom'
 import Header from "./components/Header";
 import './App.css';
 import axios from 'axios';
@@ -17,47 +18,62 @@ class App extends Component {
     }
   }
 
-  componentDidMount = async ()  => {
+  componentDidMount = async () => {
     await axios
-    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-    .then(response => {
+      .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+      .then(response => {
         console.log(response.data)
         this.setState({
-          dataRandom:response.data,
-          drinkState:response.data.drinks[0]
+          dataRandom: response.data,
+          drinkState: response.data.drinks[0]
         })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   newRandomDrink = (e) => {
     axios
-    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-    .then(response => {
+      .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+      .then(response => {
         console.log(response.data)
         this.setState({
-          dataRandom:response.data,
-          drinkState:response.data.drinks[0]
+          dataRandom: response.data,
+          drinkState: response.data.drinks[0]
         })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
-   
-    
+
+
     return (
       <div className="App">
-      <Header />  
-      <Random dataRandom={this.state.dataRandom} 
-              drinkState={this.state.drinkState}
-              newRandomDrink={this.newRandomDrink}/>
-      <Alphabetical />
+        <nav>
+          <Link to="/"> <Header /> </Link>
+        </nav>
+        <main>
 
+          <Route exact path="/" 
+              render = {routerProps => (
+            <Random 
+            {...routerProps}             
+            dataRandom={this.state.dataRandom}
+              drinkState={this.state.drinkState}
+              newRandomDrink={this.newRandomDrink} 
+            /> )} />
+            <Route path="/alphabetical"
+              render = {routerProps => (
+              <Alphabetical 
+              {...routerProps}   
+            />  )} />              
+
+
+        </main>
       </div>
     );
   }

@@ -15,6 +15,8 @@ class App extends Component {
       searchInput: "",
       dataRandom: "",
       drinkState: "",
+      searchInput: "",
+
     }
   }
 
@@ -48,6 +50,16 @@ class App extends Component {
       })
   }
 
+  handleChange = (e) => {
+    console.log(e);
+    e.preventDefault();
+    this.setState({ searchInput: e.target.value });
+  };
+  handleSubmit = (e) =>{
+    e.preventDefault();
+    this.getSearch(this.state.searchInput);
+  }
+
   render() {
 
 
@@ -57,6 +69,14 @@ class App extends Component {
           <Link to="/"> <Header /> </Link>
         </nav>
         <main>
+          <form onSubmit={this.handleSubmit} >
+            <div className="searchbox">
+              Search
+            </div>
+            <input type="text" onChange={this.handleChange}/>
+            <button>Search</button>
+          </form>
+
 
           <Route exact path="/" 
               render = {routerProps => (

@@ -1,9 +1,24 @@
+.cocktailList {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 .cocktailList div {
   height: 200px;
   width: 200px;
   border: 1px solid black;;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.cocktailList p {
+  color: black;
+  background-color: aliceblue;
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 178px;
 }
 
 .App {

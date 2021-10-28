@@ -6,13 +6,14 @@ class Alphabetical extends Component {
         super();
 
         this.state = {
-            cocktails: []
+            cocktails: [],
+            searchLetter: 'd'
         }
     }
 
     componentDidMount = () => {
         axios
-            .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a", {
+            .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${this.state.searchLetter}`, {
 
             })
             .then((response) => {
@@ -21,11 +22,9 @@ class Alphabetical extends Component {
     }
 
     render() {
-        console.log("cocktails: ", this.state.cocktails)
         return (
             <div className="cocktailList">
                 {this.state.cocktails.map((cocktail, index) => {
-                    console.log("cocktails-return: ", this.state.cocktails)
                     return (
                         <div key={cocktail.id}
                             style={{backgroundImage: `url(${cocktail.strDrinkThumb})` }}>

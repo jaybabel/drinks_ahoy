@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch, Redirect,withRouter } from 'react-router-dom'
 import Header from "./components/Header";
 import './App.css';
 import axios from 'axios';
 import Alphabetical from './components/Alphabetical';
 import Random from './components/Random';
 import Search from './components/Search';
+import SearchError from './components/SearchError';
 import Cocktail from './components/Cocktail';
+
 
 
 class App extends Component {
@@ -26,7 +28,7 @@ class App extends Component {
     await axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then(response => {
-        console.log("componentDidMount axios call:", response.data)
+        // console.log("componentDidMount axios call:", response.data)
         this.setState({
           dataRandom: response.data,
           drinkState: response.data.drinks[0]
@@ -56,10 +58,17 @@ class App extends Component {
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.searchInput}`)
       .then(response => {
-        console.log(response.data.drinks)
-        this.setState({
-          drinkSearch: response.data.drinks,
-        })
+        // console.log(response.data.drinks)
+        if (response.data.drinks) {
+          this.setState({
+            drinkSearch: response.data.drinks,
+          })
+        }
+        else {
+          this.props.history.push ("/searchError")
+
+          // this.props.history.push ("/")
+        }
       })
       .catch(err => {
         console.log(err)
@@ -67,15 +76,16 @@ class App extends Component {
   }
 
   handleChange = (e) =>{
-    console.log(e);
+    // console.log(e);
     e.preventDefault();
     this.setState( {searchInput: e.target.value}) ;
   };
 
-  handleSubmit = (e) =>{
-    console.log(e);
+  handleSubmit = async (e) =>{
+    // console.log(e);
     e.preventDefault();
-    this.getSearchResult(this.state.searchInput);
+    await this.getSearchResult(this.state.searchInput);
+    this.props.history.push("/search")
   }
 
 
@@ -86,14 +96,28 @@ class App extends Component {
         <nav>
           <Link to="/"> <Header /> </Link>
         </nav>
+        <Switch>
         <main>
+          <div className="searchbox">
         <form onSubmit={this.handleSubmit}>
                 <label>
                 Search:
                 <input type="text"   onChange={this.handleChange}/>
                 <button>Go</button>
                 </label>
-            </form>
+        </form>
+            <Route path='/search' 
+            exact render={routerProps => (<Search 
+            drinkSearch={this.state.drinkSearch}
+            {...routerProps}/>)} />
+            
+            <Route path='/searchError' 
+            exact render={routerProps => (<SearchError 
+            searchInput={this.state.searchInput}
+            {...routerProps}/>)} />
+          </div>
+
+
           <Route exact path="/" 
               render = {routerProps => (
             <Random 
@@ -102,14 +126,6 @@ class App extends Component {
               drinkState={this.state.drinkState}
               newRandomDrink={this.newRandomDrink} 
             /> )} />
-            
-            <Route 
-              render = {routerProps => ( 
-            <Search 
-            {...routerProps}
-            drinkSearch={this.state.drinkSearch}
-            /> 
-            )} />
 
             <Route path="/alphabetical"
               render = {routerProps => (
@@ -117,16 +133,17 @@ class App extends Component {
               {...routerProps}   
             />  )} />              
 
-            <Route path="/cocktail/:id"
+            {/* <Route path="/cocktail/:id"
               render={(routerProps) => (
                 <Cocktail
                   {...this.state}    
                   {...routerProps} 
-                /> )} />
+                /> )} /> */}
         </main>
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App) ;

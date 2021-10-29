@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LetterChooser from './LetterChooser'
-import { Link } from 'react-router-dom';
-
+import { Link, Route } from 'react-router-dom';
+import Cocktail from './Cocktail';
 
 class Alphabetical extends Component {
     constructor() {
@@ -53,13 +53,22 @@ class Alphabetical extends Component {
                     updateView={this.updateView}/>
                 <div className="cocktailList">
                     {this.state.cocktails.map((cocktail,index) => {
-                        return <Link className="drinkLink" to={`/cocktail/${index}`}>
+                        return (
+                      <div>
+                        <Link className="drinkLink" to={`/cocktail/${index}`}>
                             <div className="thumbnailDiv" key={cocktail.id}
                                 style={{ backgroundImage: `url(${cocktail.strDrinkThumb})`}}>
                                 <p>{cocktail.strDrink}</p>
                             </div> 
                         </Link> 
-                    })}
+
+                        <Cocktail
+                            props={this.state}
+                            />
+                            </div>
+                            )
+                        }
+                    )}
                 </div>
             </div>
         )

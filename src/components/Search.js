@@ -6,12 +6,7 @@ class Search extends Component {
     constructor(props) {
         super(props);
 
-        this.state ={
-            drinkSearch: props.drinkSearch
-        }
-        this.setState({
-            drinkSearch: props.drinkSearch,
-          })
+        
     }
 
 render () {
@@ -21,7 +16,7 @@ render () {
         <div>
             <h1>Search Results</h1>
             <div className="cocktailList">
-                 {this.state.drinkSearch.map((drinks) => {
+                 {this.props.drinkSearch.map((drinks) => {
                     return (
                         <div key={drinks.id}
                             style={{ backgroundImage: `url(${drinks.strDrinkThumb})` }}>
@@ -31,7 +26,7 @@ render () {
                 })} 
 
                 </div>
-                        BOB
+                        
         </div>
 
     )

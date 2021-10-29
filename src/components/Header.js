@@ -12,6 +12,12 @@ class Header extends Component {
             <h4>Browse The List</h4>
           </div>
         </Link>
+
+        <Link to="/ingredient" >
+          <div className="ingredientLink">
+            <h4>Browse by Ingredient</h4>
+          </div>
+        </Link>
       </header>
     );
   }

@@ -7,7 +7,7 @@ const Random = (props) => {
     const drink = props.drinkRandom;
 
     return (
-        console.log(props.drinkState),
+        // console.log(props.drinkState),
 
         <div>
             <h1>Random Drink</h1>
@@ -20,7 +20,7 @@ const Random = (props) => {
                 {(() => {
                     props.drinkState.filter(ingredient => ingredient.includes(!"null")).map(filteredIngredient =>
                         filteredIngredient => (
-                            console.log(filteredIngredient),
+                            // console.log(filteredIngredient),
                             <li key={filteredIngredient.id}>ingredient {filteredIngredient.id}</li>
                         ))
                 }

@@ -17,7 +17,7 @@ class App extends Component {
       dataRandom: "",
       drinkState: "",
       searchInput: "",
-      drinkSearch: "",
+      drinkSearch: [],
 
     }
   }
@@ -106,7 +106,7 @@ class App extends Component {
             
             <Route 
               render = {routerProps => ( 
-            <Search
+            <Search 
             {...routerProps}
             drinkSearch={this.state.drinkSearch}
             /> 

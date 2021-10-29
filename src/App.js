@@ -16,7 +16,14 @@ class App extends Component {
     this.state = {
       searchInput: "",
       dataRandom: "",
+<<<<<<< HEAD
       drinkState: ""
+=======
+      drinkState: "",
+      searchInput: "",
+      drinkSearch: [],
+
+>>>>>>> e1562a3524b1af6bacb7ed3bec891efa3569ea94
     }
   }
 
@@ -54,7 +61,7 @@ class App extends Component {
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.searchInput}`)
       .then(response => {
-        console.log(response.data)
+        console.log(response.data.drinks)
         this.setState({
           drinkSearch: response.data.drinks,
         })
@@ -89,7 +96,7 @@ class App extends Component {
                 <label>
                 Search:
                 <input type="text"   onChange={this.handleChange}/>
-                <button>"Search"</button>
+                <button>Go</button>
                 </label>
             </form>
           <Route exact path="/" 
@@ -101,12 +108,13 @@ class App extends Component {
               newRandomDrink={this.newRandomDrink} 
             /> )} />
             
-            <Route path="/search"
-              render = {routerProps => (
-            <Search
+            <Route 
+              render = {routerProps => ( 
+            <Search 
             {...routerProps}
-            drinkSearch={this.state.drinkState}
-            /> )} />
+            drinkSearch={this.state.drinkSearch}
+            /> 
+            )} />
 
             <Route path="/alphabetical"
               render = {routerProps => (

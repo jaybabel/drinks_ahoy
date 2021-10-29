@@ -8,6 +8,7 @@ import Random from './components/Random';
 import Search from './components/Search';
 import SearchError from './components/SearchError';
 import Cocktail from './components/Cocktail';
+import Ingredient from './components/Ingredient';
 
 
 
@@ -133,7 +134,12 @@ class App extends Component {
               {...routerProps}   
             />  )} />              
 
-            <Route path="/cocktail/:id"
+            <Route path="/ingredient"
+              render = {routerProps => (
+              <Ingredient 
+              {...routerProps}   
+            />  )} />   
+             <Route path="/cocktail/:id"
               render={(routerProps) => (
                 <Cocktail
                   // {...this.state}

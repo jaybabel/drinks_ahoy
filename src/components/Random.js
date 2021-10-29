@@ -1,30 +1,29 @@
 import { render } from "@testing-library/react";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import './Header.css';
 
 const Random = (props) => {
-    // useEffect(() => {
-    //     // props.getRandomDrink()
 
-    // }) 
     const drink = props.drinkRandom;
-        
-    return(
-        console.log(props.drinkState),
+
+    return (
+        // console.log(props.drinkState),
 
         <div>
             <h1>Random Drink</h1>
             <div>{props.drinkState.strDrink}</div>
-            <img src={props.drinkState.strDrinkThumb} alt=""/>
+            <img src={props.drinkState.strDrinkThumb} alt="" />
             <div>Instructions: {props.drinkState.strInstructions}</div>
 
-           {/* begin function for finding non-null ingredients */}
+            {/* begin function for finding non-null ingredients */}
             <div>
-                {(() => {props.drinkState.filter(ingredient => ingredient.includes(!"null")).map(filteredIngredient => 
-                    filteredIngredient => (
-                        console.log(filteredIngredient),
-                        <li key={filteredIngredient.id}>ingredient {filteredIngredient.id}</li>
-                    ))}
+                {(() => {
+                    props.drinkState.filter(ingredient => ingredient.includes(!"null")).map(filteredIngredient =>
+                        filteredIngredient => (
+                            // console.log(filteredIngredient),
+                            <li key={filteredIngredient.id}>ingredient {filteredIngredient.id}</li>
+                        ))
+                }
                 )}
                 <li>{props.drinkState.strMeasure1} - {props.drinkState.strIngredient1}</li>
                 <li>{props.drinkState.strMeasure2} - {props.drinkState.strIngredient2}</li>
@@ -42,17 +41,14 @@ const Random = (props) => {
                 <li>{props.drinkState.strMeasure14} - {props.drinkState.strIngredient14}</li>
                 <li>{props.drinkState.strMeasure15} - {props.drinkState.strIngredient15}</li>
             </div>
-           {/* end function for finding non-null ingredients */}
+            {/* end function for finding non-null ingredients */}
 
-
-
-            
             <div></div>
             <button onClick={props.newRandomDrink}>New Random Drink</button>
 
         </div>
     )
 
-    }
+}
 export default Random;
 

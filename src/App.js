@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch, Redirect } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import Header from "./components/Header";
 import './App.css';
 import axios from 'axios';
 import Alphabetical from './components/Alphabetical';
 import Random from './components/Random';
 import Search from './components/Search';
+import Cocktail from './components/Cocktail';
 
 
 class App extends Component {
@@ -15,9 +16,7 @@ class App extends Component {
     this.state = {
       searchInput: "",
       dataRandom: "",
-      drinkState: "",
-      searchInput: "",
-
+      drinkState: ""
     }
   }
 
@@ -25,7 +24,7 @@ class App extends Component {
     await axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then(response => {
-        console.log(response.data)
+        console.log("componentDidMount axios call:", response.data)
         this.setState({
           dataRandom: response.data,
           drinkState: response.data.drinks[0]
@@ -50,6 +49,7 @@ class App extends Component {
         console.log(err)
       })
   }
+
   getSearchResult = (e) => {
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.searchInput}`)
@@ -77,9 +77,7 @@ class App extends Component {
   }
 
 
-
   render() {
-
 
     return (
       <div className="App">
@@ -116,7 +114,12 @@ class App extends Component {
               {...routerProps}   
             />  )} />              
 
-
+            <Route path="/cocktail/:id"
+              render={(routerProps) => (
+                <Cocktail
+                  {...this.state}    
+                  {...routerProps} 
+                /> )} />
         </main>
       </div>
     );

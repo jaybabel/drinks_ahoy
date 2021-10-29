@@ -9,7 +9,7 @@ class Header extends Component {
         <h1 className="App-title">Drinks Ahoy!!</h1>
         <Link to="/alphabetical" >
           <div className="alphabeticalLink">
-            <h4>Alphabetical Search</h4>
+            <h4>Browse The List</h4>
           </div>
         </Link>
       </header>

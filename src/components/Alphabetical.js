@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LetterChooser from './LetterChooser'
+import { Link } from 'react-router-dom';
+
 
 class Alphabetical extends Component {
     constructor() {
@@ -8,7 +10,7 @@ class Alphabetical extends Component {
 
         this.state = {
             cocktails: [],
-            searchLetters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+            searchLetters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "V", "W", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "9"],
             searchLetter: 'A'
         }
     }
@@ -50,15 +52,14 @@ class Alphabetical extends Component {
                     getLetter={this.getLetter}
                     updateView={this.updateView}/>
                 <div className="cocktailList">
-                    {this.state.cocktails.map((cocktail) => {
-                        return (
-                            <div key={cocktail.id}
-                                style={{ backgroundImage: `url(${cocktail.strDrinkThumb})` }}>
+                    {this.state.cocktails.map((cocktail,index) => {
+                        return <Link className="drinkLink" to={`/cocktail/${index}`}>
+                            <div className="thumbnailDiv" key={cocktail.id}
+                                style={{ backgroundImage: `url(${cocktail.strDrinkThumb})`}}>
                                 <p>{cocktail.strDrink}</p>
-                            </div>
-                        )
+                            </div> 
+                        </Link> 
                     })}
-
                 </div>
             </div>
         )

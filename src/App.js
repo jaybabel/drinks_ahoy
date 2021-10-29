@@ -16,14 +16,9 @@ class App extends Component {
     this.state = {
       searchInput: "",
       dataRandom: "",
-<<<<<<< HEAD
-      drinkState: ""
-=======
       drinkState: "",
-      searchInput: "",
-      drinkSearch: [],
+      drinkSearch: []
 
->>>>>>> e1562a3524b1af6bacb7ed3bec891efa3569ea94
     }
   }
 

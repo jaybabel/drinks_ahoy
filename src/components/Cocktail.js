@@ -7,17 +7,17 @@ class Cocktail extends Component {
         super() 
 
             this.state = {
-                drinkId: '11007'
+                cocktail: ""
             }
         }
-
+ 
         componentDidMount = () => {
             axios
-                .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.state.drinkId}`, {
+                .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.id}`, {
 
                 })
                 .then((response) => {
-                    this.setState({ cocktails: response.data.drinks })
+                    this.setState({ cocktail: response.data.drinks[0]})
                 })
         }
 
@@ -26,18 +26,16 @@ class Cocktail extends Component {
     //     return <Redirect to="/"/>
     //   }
 
-    //www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+    //www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17222
    
     render() {
-
+  
         return (
+        console.log(this.cocktail),          
             <div className="cocktailDetail">
                 <h1>Drink Detail</h1>
-                {/* <h1>{props.match.strDrink}</h1>
-                <h1>{props.location.strDrink}</h1>
-                <h1>{props.history.strDrink}</h1>
-                <h1>{props.drinkState.strDrink}</h1>
-                <img src={props.drinkState.strDrinkThumb} alt="" /> */}
+                <h1>{this.state.cocktail.strDrink}</h1>
+                {/* <img src={props.drinkState.strDrinkThumb} alt="" /> */}
                 <div className="cocktailDescription">
                     <h3>blah blah blah</h3>
                 </div>

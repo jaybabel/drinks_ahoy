@@ -133,12 +133,13 @@ class App extends Component {
               {...routerProps}   
             />  )} />              
 
-            {/* <Route path="/cocktail/:id"
+            <Route path="/cocktail/:id"
               render={(routerProps) => (
                 <Cocktail
-                  {...this.state}    
+                  // {...this.state}
+                   cocktail={this.state.cocktail}
                   {...routerProps} 
-                /> )} /> */}
+                /> )} />
         </main>
         </Switch>
       </div>

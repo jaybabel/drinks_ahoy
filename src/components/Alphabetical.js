@@ -63,13 +63,14 @@ class Alphabetical extends Component {
                                     </div>
                                 </Link>
 
-                                <Route path="/cocktail/:id"
-                                render={(routerProps) => (
+                                {/* <Route path="/cocktail/:id"
+                                render={routerProps => (
                                 <Cocktail
                                     cocktail={cocktail}
                                     {...routerProps} 
-                                /> )}
-                                />
+                                /> 
+                                )}
+                                /> */}
                             </div>
                         )
 

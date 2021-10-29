@@ -36,6 +36,7 @@ class Cocktail extends Component {
                 <h1>Drink Detail</h1>
                 <h1>{this.state.cocktail.strDrink}</h1>
                 {/* <img src={props.drinkState.strDrinkThumb} alt="" /> */}
+                <img src={this.state.cocktail.strDrinkThumb} alt="" />
                 <div className="cocktailDescription">
                     <h3>blah blah blah</h3>
                 </div>

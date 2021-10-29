@@ -16,14 +16,9 @@ class App extends Component {
     this.state = {
       searchInput: "",
       dataRandom: "",
-<<<<<<< HEAD
-      drinkState: ""
-=======
       drinkState: "",
-      searchInput: "",
-      drinkSearch: [],
+      drinkSearch: []
 
->>>>>>> e1562a3524b1af6bacb7ed3bec891efa3569ea94
     }
   }
 
@@ -122,12 +117,12 @@ class App extends Component {
               {...routerProps}   
             />  )} />              
 
-            <Route path="/cocktail/:id"
+            {/* <Route path="/cocktail/:id"
               render={(routerProps) => (
                 <Cocktail
                   {...this.state}    
                   {...routerProps} 
-                /> )} />
+                /> )} /> */}
         </main>
       </div>
     );

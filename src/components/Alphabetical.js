@@ -62,19 +62,8 @@ class Alphabetical extends Component {
                                         <p>{cocktail.strDrink}</p>
                                     </div>
                                 </Link>
-
-                                {/* <Route path="/cocktail/:id"
-                                render={routerProps => (
-                                <Cocktail
-                                    cocktail={cocktail}
-                                    {...routerProps} 
-                                /> 
-                                )}
-                                /> */}
                             </div>
                         )
-
-
                     })}
                 </div>
             </div>

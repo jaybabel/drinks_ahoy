@@ -21,7 +21,6 @@ class Cocktail extends Component {
                 })
         }
 
-
     // if (!props.dataRandom.length) {
     //     return <Redirect to="/"/>
     //   }

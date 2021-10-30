@@ -9,11 +9,11 @@ const Random = (props) => {
     return (
         // console.log(props.drinkState),
 
-        <div>
+        <div className="cocktailDetail">
             <h1>Random Drink</h1>
             <div>{props.drinkState.strDrink}</div>
             <img src={props.drinkState.strDrinkThumb} alt="" />
-            <div>Instructions: {props.drinkState.strInstructions}</div>
+            <div className="cocktailDescription">Instructions: {props.drinkState.strInstructions}</div>
 
             {/* begin function for finding non-null ingredients */}
             <div>

@@ -20,7 +20,8 @@ class App extends Component {
       searchInput: "",
       dataRandom: "",
       drinkState: "",
-      drinkSearch: []
+      drinkSearch: [],
+      drinkIngredientSearch: [],
 
     }
   }

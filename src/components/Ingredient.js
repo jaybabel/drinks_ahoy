@@ -76,12 +76,12 @@ class Ingredient extends Component {
               <input type="submit" value="Submit" />
             </form>
           </div>
-          <div className="ingredientThumbs">
+          <div className="cocktailList">
           {this.state.drinkIngredientSearch.map((drinks) => {
                         return (
                             <div>
                                 <Link className="drinkLink" to={`/cocktail/${drinks.idDrink}`}>
-                                    <div key={drinks.id}
+                                    <div className="thumbnailDiv" key={drinks.id}
                                         style={{ backgroundImage: `url(${drinks.strDrinkThumb})` }}>
                                         <p>{drinks.strDrink}</p>
                                     </div>

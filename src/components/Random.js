@@ -10,8 +10,11 @@ const Random = (props) => {
         // console.log(props.drinkState),
 
         <div className="cocktailDetail">
-            <h1>Random Drink</h1>
-            <div>{props.drinkState.strDrink}</div>
+            <h1>Drink o' the Day</h1>
+            <div>
+                <h3>{props.drinkState.strDrink}</h3>
+                <button onClick={props.newRandomDrink}>Pull a different drink from the sea?</button>
+            </div>
             <img src={props.drinkState.strDrinkThumb} alt="" />
             <div className="cocktailDescription">Instructions: {props.drinkState.strInstructions}</div>
 
@@ -44,7 +47,7 @@ const Random = (props) => {
             {/* end function for finding non-null ingredients */}
 
             <div></div>
-            <button onClick={props.newRandomDrink}>New Random Drink</button>
+
 
         </div>
     )

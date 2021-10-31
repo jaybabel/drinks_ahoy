@@ -42,7 +42,7 @@
 }
 
 .cocktailDescription {
-  height: 200px;
+  height: 225px;
   width: 680px;
   margin: 5px 20px 40px 20px;
   border: 1px solid rgb(94, 89, 77);
@@ -51,3 +51,12 @@
   padding: 10px;
 }
 
+.cocktailRecipe {
+  height: 200px;
+  width: 680px;
+  margin: 5px 20px 40px 20px;
+  border: 1px solid rgb(94, 89, 77);
+  background-color: rgba(255, 235, 205, 0.5);
+  text-align: left;
+  padding: 10px;
+}

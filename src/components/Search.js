@@ -1,19 +1,14 @@
-//import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import './Header.css';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Search extends Component {
     constructor(props) {
         super(props);
-
-
     }
 
     render() {
         return (
-            // console.log(this.state.drinkSearch),
-
             <div>
                 <h1>Search Results</h1>
                 <div className="cocktailList">
@@ -29,12 +24,10 @@ class Search extends Component {
                             </div>
                         )
                     })}
-
                 </div>
-
             </div>
-
         )
     }
 }
+
 export default Search;

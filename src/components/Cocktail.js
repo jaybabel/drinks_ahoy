@@ -88,8 +88,6 @@ class Cocktail extends Component {
             { recipe.push([...this.state.cocktail.strIngredient15," - ", ...this.state.cocktail.strMeasure15]) } 
                 else if (this.state.cocktail.strIngredient15) { recipe.push([this.state.cocktail.strIngredient15])}
                         
-                                                                                                                
-console.log(recipe)
 
         return (
             <div className="cocktailDetail">

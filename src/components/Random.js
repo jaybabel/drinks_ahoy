@@ -66,7 +66,7 @@ const Random = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.drinkState.strDrink}</h5>
                 </div>
-                    <img src={props.drinkState.strDrinkThumb} alt="" max-width="700px" height="auto" />
+                    <img src={props.drinkState.strDrinkThumb} alt="" max-width="600px" height="auto" />
                     <rect width="400px" height="auto" fill="#868e96"></rect>
                     <text x="50%" y="50%" fill="#dee2e6" dy=".3em">{props.drinkState.strDrink}</text>
                 <div className="card-body">

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import 'bootswatch/dist/darkly/bootstrap.min.css'; // Added this :boom:
-
 import "./Header.css"  
 class Header extends Component {
 
@@ -15,6 +14,7 @@ class Header extends Component {
 
         <div className="header-left">
         <h1 className="navbar-brand">
+          <img className="header-image" src="./header_img.jpg" alt="header image" />
         <Link to="/" >Drinks Ahoy!!</Link></h1>
         </div>
        

@@ -71,3 +71,8 @@
 li{
   list-style-type: none;
 }
+
+.input-group{
+  padding-left: 10px;
+
+}

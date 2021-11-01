@@ -106,9 +106,9 @@ class App extends Component {
           <div className="input-group mb-3">
         <form onSubmit={this.handleSubmit}>
                 <label>
-                Search:
+                       Search:
                 <input type="text"   onChange={this.handleChange}/>
-                <button>Go</button>
+                <button class="btn btn-primary">Go</button>
                 </label>
         </form>
             <Route path='/search' 

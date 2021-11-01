@@ -52,7 +52,9 @@
 }
 
 .cocktailRecipe {
-  height: 200px;
+  display: grid;
+  grid-template-columns: 200px, 200px;
+  height: 400px;
   width: 680px;
   margin: 5px 20px 40px 20px;
   border: 1px solid rgb(94, 89, 77);

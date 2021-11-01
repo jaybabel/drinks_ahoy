@@ -5,31 +5,51 @@ import axios from 'axios';
 
 class Cocktail extends Component {
     constructor() {
-        super() 
+        super()
 
-            this.state = {
-                cocktail: ""
-            }
+        this.state = {
+            cocktail: ""
         }
- 
-        componentDidMount = () => {
-            axios
-                .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.id}`, {
+    }
 
-                })
-                .then((response) => {
-                    this.setState({ cocktail: response.data.drinks[0] })
-                })
-        }
-            
+    componentDidMount = () => {
+        axios
+            .get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.id}`, {
+
+            })
+            .then((response) => {
+                this.setState({ cocktail: response.data.drinks[0] })
+            })
+    }
+
     // if (!props.dataRandom.length) {
     //     return <Redirect to="/"/>
     //   }
-   
+
     render() {
-        // const measure = this.state.cocktail.strMeasur1.map(d) => <li key={d.}
-        
-        return (         
+        const recipe = [[], []]
+        const ingredient = []
+        const measure = []
+
+        if ((this.state.cocktail.strIngredient1) && (this.state.cocktail.strMeasure1)) { recipe.push([this.state.cocktail.strIngredient1], [this.state.cocktail.strMeasure1]) } else if (this.state.cocktail.strIngredient1) { recipe.push([this.state.cocktail.strIngredient1])}
+
+        if ((this.state.cocktail.strIngredient2) && (this.state.cocktail.strMeasure2)) { recipe.push([this.state.cocktail.strIngredient2], [this.state.cocktail.strMeasure2]) } else if (this.state.cocktail.strIngredient2) { recipe.push([this.state.cocktail.strIngredient2])}
+
+        if ((this.state.cocktail.strIngredient3) && (this.state.cocktail.strMeasure3)) { recipe.push([this.state.cocktail.strIngredient3], [this.state.cocktail.strMeasure3]) } else if (this.state.cocktail.strIngredient3) { recipe.push([this.state.cocktail.strIngredient3])}
+
+        if ((this.state.cocktail.strIngredient4) && (this.state.cocktail.strMeasure4)) { recipe.push([this.state.cocktail.strIngredient4], [this.state.cocktail.strMeasure4]) } else if (this.state.cocktail.strIngredient4) { recipe.push([this.state.cocktail.strIngredient4])}
+
+        if ((this.state.cocktail.strIngredient5) && (this.state.cocktail.strMeasure5)) { recipe.push([this.state.cocktail.strIngredient5], [this.state.cocktail.strMeasure5]) } else if (this.state.cocktail.strIngredient5) { recipe.push([this.state.cocktail.strIngredient5])}
+
+        if ((this.state.cocktail.strIngredient6) && (this.state.cocktail.strMeasure6)) { recipe.push([this.state.cocktail.strIngredient6], [this.state.cocktail.strMeasure6]) } else if (this.state.cocktail.strIngredient6) { recipe.push([this.state.cocktail.strIngredient6])}
+
+        if ((this.state.cocktail.strIngredient7) && (this.state.cocktail.strMeasure7)) { recipe.push([this.state.cocktail.strIngredient7], [this.state.cocktail.strMeasure7]) } else if (this.state.cocktail.strIngredient7) { recipe.push([this.state.cocktail.strIngredient7])}
+
+        if ((this.state.cocktail.strIngredient8) && (this.state.cocktail.strMeasure8)) { recipe.push([this.state.cocktail.strIngredient8], [this.state.cocktail.strMeasure8]) } else if (this.state.cocktail.strIngredient8) { recipe.push([this.state.cocktail.strIngredient8])}
+
+
+
+        return (
             <div className="cocktailDetail">
                 <h1>Drink Detail</h1>
                 <h1>{this.state.cocktail.strDrink}</h1>
@@ -41,13 +61,12 @@ class Cocktail extends Component {
                 </div>
                 <div className="cocktailRecipe">
                     <h3>Ingredients:</h3>
-                    <h4>{this.state.cocktail.strMeasure1} - {this.state.cocktail.strIngredient1}</h4>
-                    {/* {measure.map(measure => (
-                        <li>
-                            {measure}
-                        </li>
-                    )
-                    )} */}
+                    {recipe.map((recipe) => (
+                        <p>
+                           {recipe}
+                        </p>
+                    )  
+                    )}
                 </div>
             </div>
         )

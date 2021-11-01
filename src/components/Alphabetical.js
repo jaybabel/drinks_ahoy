@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LetterChooser from './LetterChooser'
-import { Link, Route } from 'react-router-dom';
-import Cocktail from './Cocktail';
+import { Link } from 'react-router-dom';
+
 
 class Alphabetical extends Component {
     constructor() {

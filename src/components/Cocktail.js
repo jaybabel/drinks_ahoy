@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Redirect } from "react-router-dom"
 
 
 class Cocktail extends Component {
@@ -29,7 +28,6 @@ class Cocktail extends Component {
     render() {
         const recipe = []
 
-    
         if ((this.state.cocktail.strIngredient1) && (this.state.cocktail.strMeasure1)) 
             { recipe.push([...this.state.cocktail.strIngredient1," - ", ...this.state.cocktail.strMeasure1]) } 
                 else if (this.state.cocktail.strIngredient1) { recipe.push([this.state.cocktail.strIngredient1])}
@@ -90,8 +88,7 @@ class Cocktail extends Component {
             { recipe.push([...this.state.cocktail.strIngredient15," - ", ...this.state.cocktail.strMeasure15]) } 
                 else if (this.state.cocktail.strIngredient15) { recipe.push([this.state.cocktail.strIngredient15])}
                         
-                                                                                                                   
-
+                                                                                                                
 console.log(recipe)
 
         return (

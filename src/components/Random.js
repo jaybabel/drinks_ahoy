@@ -5,6 +5,55 @@ import './Header.css';
 const Random = (props) => {
 
     const drink = props.drinkRandom;
+    const recipe = [];
+
+
+    if ((props.drinkState.strIngredient1) && (props.drinkState.strMeasure1)) { recipe.push([...props.drinkState.strIngredient1, " - ", ...props.drinkState.strMeasure1]) }
+    else if (props.drinkState.strIngredient1) { recipe.push([props.drinkState.strIngredient1]) }
+
+    if ((props.drinkState.strIngredient2) && (props.drinkState.strMeasure2)) { recipe.push([...props.drinkState.strIngredient2, " - ", ...props.drinkState.strMeasure2]) }
+    else if (props.drinkState.strIngredient2) { recipe.push([props.drinkState.strIngredient2]) }
+
+    if ((props.drinkState.strIngredient3) && (props.drinkState.strMeasure3)) { recipe.push([...props.drinkState.strIngredient3, " - ", ...props.drinkState.strMeasure3]) }
+    else if (props.drinkState.strIngredient3) { recipe.push([props.drinkState.strIngredient3]) }
+
+    if ((props.drinkState.strIngredient4) && (props.drinkState.strMeasure4)) { recipe.push([...props.drinkState.strIngredient4, " - ", ...props.drinkState.strMeasure4]) }
+    else if (props.drinkState.strIngredient4) { recipe.push([props.drinkState.strIngredient4]) }
+
+    if ((props.drinkState.strIngredient5) && (props.drinkState.strMeasure5)) { recipe.push([...props.drinkState.strIngredient5, " - ", ...props.drinkState.strMeasure5]) }
+    else if (props.drinkState.strIngredient5) { recipe.push([props.drinkState.strIngredient5]) }
+
+    if ((props.drinkState.strIngredient6) && (props.drinkState.strMeasure6)) { recipe.push([...props.drinkState.strIngredient6, " - ", ...props.drinkState.strMeasure6]) }
+    else if (props.drinkState.strIngredient6) { recipe.push([props.drinkState.strIngredient6]) }
+
+    if ((props.drinkState.strIngredient7) && (props.drinkState.strMeasure7)) { recipe.push([...props.drinkState.strIngredient7, " - ", ...props.drinkState.strMeasure7]) }
+    else if (props.drinkState.strIngredient7) { recipe.push([props.drinkState.strIngredient7]) }
+
+    if ((props.drinkState.strIngredient8) && (props.drinkState.strMeasure8)) { recipe.push([...props.drinkState.strIngredient8, " - ", ...props.drinkState.strMeasure8]) }
+    else if (props.drinkState.strIngredient8) { recipe.push([props.drinkState.strIngredient8]) }
+
+    if ((props.drinkState.strIngredient9) && (props.drinkState.strMeasure9)) { recipe.push([...props.drinkState.strIngredient9, " - ", ...props.drinkState.strMeasure9]) }
+    else if (props.drinkState.strIngredient9) { recipe.push([props.drinkState.strIngredient9]) }
+
+    if ((props.drinkState.strIngredient10) && (props.drinkState.strMeasure10)) { recipe.push([...props.drinkState.strIngredient10, " - ", ...props.drinkState.strMeasure10]) }
+    else if (props.drinkState.strIngredient10) { recipe.push([props.drinkState.strIngredient10]) }
+
+    if ((props.drinkState.strIngredient11) && (props.drinkState.strMeasure11)) { recipe.push([...props.drinkState.strIngredient11, " - ", ...props.drinkState.strMeasure11]) }
+    else if (props.drinkState.strIngredient11) { recipe.push([props.drinkState.strIngredient11]) }
+
+    if ((props.drinkState.strIngredient12) && (props.drinkState.strMeasure12)) { recipe.push([...props.drinkState.strIngredient12, " - ", ...props.drinkState.strMeasure12]) }
+    else if (props.drinkState.strIngredient12) { recipe.push([props.drinkState.strIngredient12]) }
+
+    if ((props.drinkState.strIngredient13) && (props.drinkState.strMeasure13)) { recipe.push([...props.drinkState.strIngredient13, " - ", ...props.drinkState.strMeasure13]) }
+    else if (props.drinkState.strIngredient13) { recipe.push([props.drinkState.strIngredient13]) }
+
+    if ((props.drinkState.strIngredient14) && (props.drinkState.strMeasure14)) { recipe.push([...props.drinkState.strIngredient14, " - ", ...props.drinkState.strMeasure14]) }
+    else if (props.drinkState.strIngredient14) { recipe.push([props.drinkState.strIngredient14]) }
+
+    if ((props.drinkState.strIngredient15) && (props.drinkState.strMeasure15)) { recipe.push([...props.drinkState.strIngredient15, " - ", ...props.drinkState.strMeasure15]) }
+    else if (props.drinkState.strIngredient15) { recipe.push([props.drinkState.strIngredient15]) }
+
+
 
     return (
         // console.log(props.drinkState),
@@ -16,7 +65,11 @@ const Random = (props) => {
                 <button onClick={props.newRandomDrink}>Pull a different drink from the sea?</button>
             </div>
             <img src={props.drinkState.strDrinkThumb} alt="" />
-            <div className="cocktailDescription">Instructions: {props.drinkState.strInstructions}</div>
+            <div className="cocktailDescription">
+                Instructions: {props.drinkState.strInstructions}
+                <br></br><br></br>
+                This drink belongs in a {props.drinkState.strGlass}
+            </div>
 
             {/* begin function for finding non-null ingredients */}
             <div>
@@ -28,21 +81,12 @@ const Random = (props) => {
                         ))
                 }
                 )}
-                <li>{props.drinkState.strMeasure1} - {props.drinkState.strIngredient1}</li>
-                <li>{props.drinkState.strMeasure2} - {props.drinkState.strIngredient2}</li>
-                <li>{props.drinkState.strMeasure3} - {props.drinkState.strIngredient3}</li>
-                <li>{props.drinkState.strMeasure4} - {props.drinkState.strIngredient4}</li>
-                <li>{props.drinkState.strMeasure5} - {props.drinkState.strIngredient5}</li>
-                <li>{props.drinkState.strMeasure6} - {props.drinkState.strIngredient6}</li>
-                <li>{props.drinkState.strMeasure7} - {props.drinkState.strIngredient7}</li>
-                <li>{props.drinkState.strMeasure8} - {props.drinkState.strIngredient8}</li>
-                <li>{props.drinkState.strMeasure9} - {props.drinkState.strIngredient9}</li>
-                <li>{props.drinkState.strMeasure10} - {props.drinkState.strIngredient10}</li>
-                <li>{props.drinkState.strMeasure11} - {props.drinkState.strIngredient11}</li>
-                <li>{props.drinkState.strMeasure12} - {props.drinkState.strIngredient12}</li>
-                <li>{props.drinkState.strMeasure13} - {props.drinkState.strIngredient13}</li>
-                <li>{props.drinkState.strMeasure14} - {props.drinkState.strIngredient14}</li>
-                <li>{props.drinkState.strMeasure15} - {props.drinkState.strIngredient15}</li>
+                <div className="cocktailRecipe">
+                    <h3>Ingredients:</h3>
+                    {recipe.map(recipe => (
+                        <p>{recipe}</p>
+                    ))}
+                </div>
             </div>
             {/* end function for finding non-null ingredients */}
 

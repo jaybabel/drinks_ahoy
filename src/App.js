@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch, Redirect, withRouter } from 'react-router-dom'
+import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import Header from "./components/Header";
 import './App.css';
 import axios from 'axios';
@@ -30,7 +30,6 @@ class App extends Component {
     await axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then(response => {
-        // console.log("componentDidMount axios call:", response.data)
         this.setState({
           dataRandom: response.data,
           drinkState: response.data.drinks[0]
@@ -60,7 +59,6 @@ class App extends Component {
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.searchInput}`)
       .then(response => {
-        // console.log(response.data.drinks)
         if (response.data.drinks) {
           this.setState({
             drinkSearch: response.data.drinks,
@@ -78,13 +76,11 @@ class App extends Component {
   }
 
   handleChange = (e) =>{
-    // console.log(e);
     e.preventDefault();
     this.setState( {searchInput: e.target.value}) ;
   };
 
   handleSubmit = async (e) =>{
-    // console.log(e);
     e.preventDefault();
     await this.getSearchResult(this.state.searchInput);
     this.props.history.push("/search")

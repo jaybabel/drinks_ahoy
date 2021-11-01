@@ -15,4 +15,3 @@ function LetterChooser (props) {
 
 export default LetterChooser;
 
-// onClick={() => {props.setView('random dogs');}}>

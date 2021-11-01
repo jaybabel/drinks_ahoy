@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch, Redirect, withRouter } from 'react-router-dom'
 import Header from "./components/Header";
-<<<<<<< HEAD
-import 'bootswatch/dist/slate/bootstrap.min.css'; // Added this :boom:
-=======
-import 'bootswatch/dist/darkly/bootstrap.min.css'; // Added this :boom:
+//import 'bootswatch/dist/darkly/bootstrap.min.css'; // Added this :boom:
 
->>>>>>> main
 import './App.css';
 import axios from 'axios';
 import Alphabetical from './components/Alphabetical';

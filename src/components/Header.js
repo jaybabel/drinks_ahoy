@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import 'bootswatch/dist/slate/bootstrap.min.css'; // Added this :boom:
+
 // import "./Header.css"  
 class Header extends Component {
 

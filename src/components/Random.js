@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
-import './Header.css';
+// import './Header.css';
 
 const Random = (props) => {
 
@@ -57,40 +57,42 @@ const Random = (props) => {
 
     return (
         // console.log(props.drinkState),
-
+        
         <div className="cocktailDetail">
-            <h1>Drink o' the Day</h1>
-            <div>
-                <h3>{props.drinkState.strDrink}</h3>
-                <button onClick={props.newRandomDrink}>Pull a different drink from the sea?</button>
-            </div>
-            <img src={props.drinkState.strDrinkThumb} alt="" />
-            <div className="cocktailDescription">
-                Instructions: {props.drinkState.strInstructions}
-                <br></br><br></br>
-                This drink belongs in a {props.drinkState.strGlass}
-            </div>
-
-            {/* begin function for finding non-null ingredients */}
-            <div>
-                {(() => {
-                    props.drinkState.filter(ingredient => ingredient.includes(!"null")).map(filteredIngredient =>
-                        filteredIngredient => (
-                            // console.log(filteredIngredient),
-                            <li key={filteredIngredient.id}>ingredient {filteredIngredient.id}</li>
-                        ))
-                }
-                )}
-                <div className="cocktailRecipe">
-                    <h3>Ingredients:</h3>
+          
+            {/* end function for finding non-null ingredients */}
+            <div className="card mb-3">
+                <h3 className="card-header">Drink o' the Day</h3>
+                <div className="card-body">
+                    <h5 className="card-title">{props.drinkState.strDrink}</h5>
+                </div>
+                    <img src={props.drinkState.strDrinkThumb} alt="" max-width="600px" height="auto" />
+                    <rect width="400px" height="auto" fill="#868e96"></rect>
+                    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">{props.drinkState.strDrink}</text>
+                <div className="card-body">
+                    <h4>Instructions:</h4>
+                    <p className="card-text" >{props.drinkState.strInstructions}</p>
+                </div>
+                <div className="card-body">
+                    <h4>Glass Type:</h4>
+                    <p className="card-text">{props.drinkState.strGlass}</p>
+                </div>
+                <ul className="list-group list-group-flush">
+                    <h4>Ingredients:</h4>
                     {recipe.map(recipe => (
-                        <p>{recipe}</p>
+                    <li>{recipe}</li>
                     ))}
+                    
+                </ul>
+                
+                <div className="card-footer text-muted">
+                <button onClick={props.newRandomDrink}>Pull a different drink from the sea?</button>
                 </div>
             </div>
-            {/* end function for finding non-null ingredients */}
+           
 
-            <div></div>
+            
+            {/* end function for finding non-null ingredients */}
 
 
         </div>

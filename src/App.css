@@ -1,3 +1,5 @@
+
+
 .cocktailList {
   display: inline-flex;
   flex-direction: row;
@@ -59,4 +61,18 @@
   background-color: rgba(255, 235, 205, 0.5);
   text-align: left;
   padding: 10px;
+}
+.card-text{
+  word-wrap: normal;
+  max-width: 700px;
+
+}
+
+li{
+  list-style-type: none;
+}
+
+.input-group{
+  padding-left: 10px;
+
 }

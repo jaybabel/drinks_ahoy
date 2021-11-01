@@ -1,6 +1,6 @@
-.header {
+/* .header {
     background-color: bisque;
-    height: 150px;
+    max-height: 500px;
     padding-top: 25px;
 }
 
@@ -12,3 +12,26 @@
     text-decoration: none;
 }
   
+
+.header-left{
+    position: absolute;
+    left: 0px;
+text-align: left;
+    padding: 10px;
+}
+.header-right{
+    position: absolute;
+  right: 0px;
+text-align: right;
+    padding: 10px;
+
+} */
+.nav-item{
+    padding-left: 75px;
+    
+}
+.header-image{
+    width: 100px;
+    height: auto;
+    padding: 3px 10px 0px 10px;
+}

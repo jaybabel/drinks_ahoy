@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Header.css';
+import { Link, Route } from 'react-router-dom';
+import Cocktail from './Cocktail';
+// import './Header.css';
 
 
 class Ingredient extends Component {
@@ -24,7 +25,12 @@ class Ingredient extends Component {
 
         })
       .then((response) => {
-        console.log(response)
+        // console.log(response)
+        response.data.drinks.sort(function(a,b) {
+          return (a.strIngredient1.toUpperCase() < b.strIngredient1.toUpperCase())
+          ? -1
+          : (a.strIngredient1 > b.strIngredient1) ? 1:0;
+        })
         this.setState({ 
           ingredients: response.data.drinks 
         })
@@ -48,12 +54,15 @@ class Ingredient extends Component {
 
     })
     .then((response) => {
-      console.log(response)
+      // console.log(response)
       this.setState ( {
         drinkIngredientSearch: response.data.drinks })
     })
   }
 
+
+
+  
   render() {
     return (
       <div>
@@ -63,6 +72,7 @@ class Ingredient extends Component {
             <form onSubmit={this.submitIngredient}>
               <select value= {this.state.value} onChange={this.handleIngredientChange}>
                 <option selected value="">Select an Ingredient</option>
+               
                 {this.state.ingredients.map((ingredient, index) => {
                   return (
                     // console.log(ingredient.strIngredient1),

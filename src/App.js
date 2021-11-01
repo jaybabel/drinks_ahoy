@@ -92,10 +92,11 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div>
         <nav>
           <Link to="/"> <Header /> </Link>
         </nav>
+      <div className="App">
         <Switch>
         <main>
           <div className="searchbox">
@@ -147,6 +148,7 @@ class App extends Component {
                 /> )} />
         </main>
         </Switch>
+      </div>
       </div>
     );
   }

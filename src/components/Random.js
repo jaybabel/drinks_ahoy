@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
-import './Header.css';
+// import './Header.css';
 
 const Random = (props) => {
 

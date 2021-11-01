@@ -25,7 +25,7 @@ class Ingredient extends Component {
 
         })
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         this.setState({ 
           ingredients: response.data.drinks 
         })
@@ -49,7 +49,7 @@ class Ingredient extends Component {
 
     })
     .then((response) => {
-      console.log(response)
+      // console.log(response)
       this.setState ( {
         drinkIngredientSearch: response.data.drinks })
     })

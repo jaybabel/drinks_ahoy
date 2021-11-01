@@ -15,7 +15,7 @@ class Header extends Component {
         <div className="header-left">
         <h1 className="navbar-brand">
           <img className="header-image" src="./header_img.jpg" alt="header image" />
-        <Link to="/" >Drinks Ahoy!!</Link></h1>
+          <Link to="/" >Drinks Ahoy!!</Link></h1>
         </div>
        
         {/* <button className="navbar-toggler" type ="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">

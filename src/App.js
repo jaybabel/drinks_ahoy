@@ -98,7 +98,7 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <Link to="/"> <Header /> </Link>
+          <Link to="/" id="headerLink"> <Header /> </Link>
         </nav>
       <div className="App">
         <Switch>

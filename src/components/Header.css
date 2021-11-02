@@ -1,10 +1,10 @@
-/* .header {
-    background-color: bisque;
-    max-height: 500px;
-    padding-top: 25px;
+.header {
+    display:inline-block;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    width: 100%;
 }
 
-.App-title {
+/* .App-title {
     text-decoration: none;
 }
 

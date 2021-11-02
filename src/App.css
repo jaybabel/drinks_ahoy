@@ -1,3 +1,9 @@
+.searchMain {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .cocktailList {
   display: inline-flex;
@@ -5,6 +11,9 @@
   flex-wrap: wrap;
   gap: 15px;
   padding-left: 25px;
+  min-width: 800px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .cocktailList div {
@@ -80,8 +89,3 @@ li{
   max-width: 300px;
 }
 
-.searchMain {
-  display: grid;
-  place-content: center;
-  gap: 1ch;
-}

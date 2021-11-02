@@ -106,7 +106,6 @@ class App extends Component {
           <div className="input-group mb-3">
         <form onSubmit={this.handleSubmit}>
         <div className="input-group mb-3">
-
                 <label>
                        Search:
                 <input  type="text"   onChange={this.handleChange}/>
@@ -124,7 +123,6 @@ class App extends Component {
             searchInput={this.state.searchInput}
             {...routerProps}/>)} />
           </div>
-
 
           <Route exact path="/" 
               render = {routerProps => (

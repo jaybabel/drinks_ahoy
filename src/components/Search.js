@@ -9,8 +9,8 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Search Results</h1>
+            <div className="searchMain">
+                <h1 className="searchTitle">Search Results</h1>
                 <div className="cocktailList">
                     {this.props.drinkSearch.map((drinks) => {
                         return (

@@ -82,7 +82,7 @@ class Ingredient extends Component {
                   )}
                 )}
               </select>
-              <input type="submit" value="Submit" />
+              <input class="btn btn-primary" type="submit" value="Submit" />
             </form>
           </div>
           <div className="cocktailList">

@@ -70,4 +70,5 @@ class Alphabetical extends Component {
     }
 }
 
-export default Alphabetical;
+export default Alphabetical;  
+

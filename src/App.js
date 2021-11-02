@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch, Redirect, withRouter } from 'react-router-dom'
 import Header from "./components/Header";
-import 'bootswatch/dist/darkly/bootstrap.min.css'; // Added this :boom:
+//import 'bootswatch/dist/darkly/bootstrap.min.css'; // Added this :boom:
 
 import './App.css';
 import axios from 'axios';

@@ -34,14 +34,14 @@
   background-image: url('./pirates.jpeg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  min-height: 800px;
   /* background-image: 100% auto; */
 }
 
 .cocktailDetail {
   align-items: center;
-  border: 1px solid black;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
 }
 
 .cocktailDescription {
@@ -63,10 +63,10 @@
   text-align: left;
   padding: 10px;
 }
+
 .card-text{
   word-wrap: normal;
   max-width: 700px;
-
 }
 
 li{
@@ -76,7 +76,7 @@ li{
 .input-group{
   padding-left: 10px;
 
-}
+} 
 
 /* button{
   padding-left: 100px;

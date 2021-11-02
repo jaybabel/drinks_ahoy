@@ -53,7 +53,6 @@ class Alphabetical extends Component {
                     updateView={this.updateView} />
                 <div className="cocktailList">
                     {this.state.cocktails.map((cocktail, index) => {
-
                         return (
                             <div>
                                 <Link className="drinkLink" to={`/cocktail/${cocktail.idDrink}`}>
@@ -71,4 +70,5 @@ class Alphabetical extends Component {
     }
 }
 
-export default Alphabetical;
+export default Alphabetical;  
+

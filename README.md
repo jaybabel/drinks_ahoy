@@ -77,7 +77,7 @@ Day 7 - paperwork, last few tweaks, and final deploy.
 ## Code Snippet
 Each of us had areas during the development process that were challenging that we were able to overcome.  What I am the most proud of is that through the code development process over the weekend I was able to finish my text search and ingredient features and they worked perfectly with Jay's cocktail details rendering page.  It was really cool to see our code work so well and almost like plug-and-play.  By utilizing this one render page for the cocktail we saved each of us from additional development time, avoided code reuse, and ensured common rendering regardless of what type of search input was used.
 
-##Issues and Resolutions
+## Issues and Resolutions
 One challenge was the way the API provided us drink ingredients and their measurements in its response.  Rather than putting multiple ingredients into an array it listed them out like strIngredient1 ... strIngredient1.  This prohibited us from being able to use the .map function and we had to look for alternatives.  We believe that with more time we would have been able to incorporate a For loop, but for now we did use multiple lines of code to reach MVP.
 
 Formatting with so many potential graphics on the search results was challenging.  We overcame a lot of those and also used bootstrap/bootswatch to help with the styling.  Bootswatch made it pretty easy, but introduces some additional challenges to tweaking after it is implemented.

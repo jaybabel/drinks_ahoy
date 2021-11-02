@@ -16,7 +16,7 @@ class Search extends Component {
                         return (
                             <div>
                                 <Link className="drinkLink" to={`/cocktail/${drinks.idDrink}`}>
-                                    <div key={drinks.id}
+                                    <div className="thumbnailDiv" key={drinks.id}
                                         style={{ backgroundImage: `url(${drinks.strDrinkThumb})` }}>
                                         <p>{drinks.strDrink}</p>
                                     </div>
